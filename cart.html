@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Корзина</h2>
+<table class="table">
+{% for i in cart_items %}
+<tr>
+<td>{{ i.product.name }}</td>
+<td>{{ i.total_price }} ₽</td>
+<td><a href="{% url 'remove_from_cart' i.id %}" class="btn btn-delete">Удалить</a></td>
+</tr>
+{% endfor %}
+</table>
+<h4>Итого: {{ total_price }} ₽</h4>
+{% endblock %}

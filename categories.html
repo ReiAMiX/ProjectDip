@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Категории</h2>
+<div class="row">
+{% for c in categories %}
+<div class="col-md-4">
+<div class="card">
+<img src="{{ c.image.url }}">
+<div class="card-body text-center">
+<h5>{{ c.name }}</h5>
+<a href="{% url 'products_by_category' c.id %}" class="btn btn-cart">Открыть</a>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Избранное</h2>
+{% for i in items %}
+<p>{{ i.product.name }}
+<a href="{% url 'remove_from_favorites' i.id %}" class="btn btn-delete">Удалить</a>
+</p>
+{% endfor %}
+{% endblock %}
